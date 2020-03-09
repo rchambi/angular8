@@ -1,0 +1,32 @@
+<!--  ----- se comenta por rutas hijas(si solo prubea router descomentar y comentar #RutasHijas)
+<ng-container *ngIf="users">
+        <table class="table">
+            <thead>
+                <tr>                    
+                    <td>Name</td>
+                    <td>UserName</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                                     --------- rutasParam 
+                    <td><a style="cursor: pointer;" class="btn btn-success" (click)="verPosts(user.id)">Ver Posts </a>  </td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>                
+                </tr>
+
+            </tbody>
+        </table>
+    </ng-container>
+
+    <button type="button" (click)="navegarHaciaPost()">Ir a post</button>
+ -->
+
+
+ <!-- ----usando rutas hijas  #RutasHijas -->
+ <h3>Componente Usuario</h3>
+ <!-- <div class="container-fluid"> -->
+     <router-outlet></router-outlet>
+     
+ <!-- </div> -->
+ 

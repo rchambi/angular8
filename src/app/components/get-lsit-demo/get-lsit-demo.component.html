@@ -1,0 +1,19 @@
+<ng-container *ngIf="users">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>UserName</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>                
+            </tr>
+
+        </tbody>
+    </table>
+</ng-container>

@@ -1,0 +1,20 @@
+
+<input type="text" #textId> 
+<button (click)="getUser(textId.value)">Mostrar Usuario </button>
+<hr>
+
+<ng-container *ngIf="notFound">
+    Usuario no encontrado
+</ng-container>
+<ng-container *ngIf="user">
+<div>
+    id: {{user.id}}
+</div>
+<div>
+    nommbre: {{user.name}}
+</div>
+<div>
+    Usuario: {{user.username}}
+</div>
+</ng-container>
+
