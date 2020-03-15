@@ -1,0 +1,22 @@
+/* directivaDeatributo ngClass */
+.cuadrado{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.secundario{
+background-color: seagreen;
+}
+.cuadrado-grande{
+    width: 200px;
+    height: 200px;
+}
+
+/* uso-ngFor */
+.par {
+    background-color:springgreen;
+  }
+  
+  .impar {
+    background-color:violet;
+  }

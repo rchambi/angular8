@@ -1,0 +1,179 @@
+<div class="row">
+    <div class="col-md-6">
+        <!-- usoDe# -->
+        <h1>variable de referencia</h1>
+        <p #varP>este es mi parrafo</p>
+        info a copiado : <input value="{{varP.innerHTML}}"><br>
+
+        <button (click)="usoReferencia(varP)" type="button"> Mostrar</button>
+        desde ts : {{respuestaReferencia}}
+
+    </div>
+    <div class="col-md-6">
+        <!-- --------------------------------------------------------------------------->
+        <h1>navegacion segura</h1>
+        nombre1 : {{persona.nombre}} <br>
+        nombre2 que no existe se usa "?": ex persona?.nombre2 {{persona?.nombre2}} <br>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-6">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!-- --------------------------------------------------------------------------->
+        <h1>binding de eventos</h1>
+        <!-- bindingEventos se usa parentesis - ()-->
+        <input (input)="mostrarTexto($event)"><br>
+        el texto textoEscrito es : {{textoEscrito}}
+    </div>
+    <div class="col-md-6">
+        <!-- --------------------------------------------------------------------------->
+        <br>
+        <!-- bindingXpropiedad -->
+        <h1>binding de propiedad- ex 1</h1>
+        <select (change)="imagenURL=$event.target.value" id="selectId">
+            <option value="../../../assets/img/netCore.JPG">asp.Net</option>
+            <option value="../../../assets/img/angular.JPG">angular</option>
+        </select><br><br>
+        <!-- bindingXpropiedad - vemos q tiene []-->
+        <img [src]="imagenURL">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!-- --------------------------------------------------------------------------->
+        <br>
+        <!-- bindingXatributo -->
+        <h1>binding de atributo - attr </h1>
+        casi nunca se usa
+    </div>
+    <div class="col-md-6">
+        <!-- ----------------------------------directivas de attributo - ngClass----------------------------------------->
+        <br>
+        <h1>ngClass</h1>
+        <!-- directivaDeatributo ngClass -->
+        <input type="checkbox" (change)="colorCheck= !colorCheck">
+        cambiar clases -coloca o remueve class
+        <br>
+        <input type="checkbox" (change)="tamanioCheck= !tamanioCheck">
+        cambiar tamaño -coloca o remueve class
+        <div>
+            <!-- añade la clase secundario si es true -->
+            <div class="cuadrado" [ngClass]="{'secundario': colorCheck}"></div><br>
+            para cambir de tamaño tmambien
+            <div class="cuadrado" [ngClass]="{'secundario': colorCheck, 'cuadrado-grande': tamanioCheck}"></div>
+        </div>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!-- ----------------------------------directivas de attributo - ngStyle----------------------------------------->
+        <!-- directivaDeatributo ngStyle -->
+        <h1>ngStyle</h1>
+        <input type="checkbox" (change)="colorCheck2= !colorCheck2">
+        cambiar clases -coloca o remueve class
+        <br>
+        <input type="number" (input)="alturaAnchura=$event.target.value" value="100">
+        cambiar tamaño -coloca o remueve class
+        <br>
+        <br>
+        <div>
+            <!-- añade la clase secundario si es true -->
+            <div class="cuadrado" [ngStyle]="{'background-color': colorCheck2 ? 'green' : 'red'}"></div><br>
+            para cambir de tamaño tmambien
+            <div class="cuadrado"
+                [ngStyle]="{'background-color': colorCheck2 ? 'green' : 'red', width:alturaAnchura + 'px', height: alturaAnchura + 'px' }">
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <!-- ----------------------------------directivas de attributo - ngModel----------------------------------------->
+        <!-- directivaDeatributo ngModel - uso-ngModel -->
+        <h1>ngModel</h1>
+        Escribe algo
+        <input [(ngModel)]="texto"><br>
+        <span><strong>valor insertado es : {{texto}}</strong></span>
+        <br>
+        <button (click)="ConvertirMayusculas()">Mayusculas</button>
+        <button (click)="ConvertirMinusculas()">Minusculas</button>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!-- ----------------------------------directivas de estructura - ngIf----------------------------------------->
+        <!--  uso-If -->
+        <h1>ngIf</h1>
+        <input type="checkbox" (change)="estaCheck= !estaCheck">
+        <span><strong>mostrar contenido</strong></span>
+        <br>
+        <div *ngIf="estaCheck">el textBox esta chequeado</div>
+    </div>
+    <div class="col-md-6">
+        <!--  uso-ngFor  -->
+        <h1>ngFor</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Indice</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let persona of personas; 
+                            let indice = index; 
+                            let primer = first; 
+                            let ultimo = last; 
+                            let par = even, let impar = odd" [ngClass]="{'par': par, 'impar': impar}">
+                    <td>{{ indice + 1 }}</td>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.edad }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!-- uso-ngSwitch -->
+        <h1>ngSwitch</h1>
+        Seleccione una opción
+        <select (change)="opcion = $event.target.value">
+            <option>--Seleccione una opción--</option>
+            <option value="ASP.NET">ASP.NET</option>
+            <option value="Angular">Angular</option>
+        </select>
+
+        <div [ngSwitch]="opcion">
+            <div *ngSwitchDefault>Debe escoger una opcion</div>
+            <div *ngSwitchCase="'ASP.NET'"> 
+                Usted ha escogido ASP.NET, un framework de desarrollo de aplicaciones web
+                creado por Microsoft
+            </div>
+            <div *ngSwitchCase="'Angular'">
+                Usted ha escogido Angular, una plataforma de desarrollo de aplicaciones
+                modernas
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h1>ngContainer</h1>        
+        <input type="checkbox" (change)="estaCheck3= !estaCheck3">
+        ex usando if - si es true- muestro/ no muestro
+        <ng-container *ngIf="estaCheck3">
+            <h2 style="background-color: burlywood;">Title</h2>
+            <div style="background-color: chartreuse;">Content</div>
+        </ng-container>
+        
+    </div>
+</div>
+<br>

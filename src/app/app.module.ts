@@ -27,6 +27,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { PasswordValidationDirective } from './validations/password-validation.directive';
 import { UsernameUnicoDirective } from './validations/username-unico.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/anotaciones-basicas.component';
 
 
 @NgModule({
@@ -44,11 +45,12 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     PasswordValidationDirective,
     UsernameUnicoDirective,
     ReactiveFormComponent,
+    AnotacionesBasicasComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule, ///cuando se usa formulario // moduloFormulario
+    FormsModule, ///cuando se usa formulario // moduloFormulario uso-ngModel
     HttpClientModule,  //// para usar con servicios tiene q ir esta linea
     UsuariosModule,//--rutasMultiples
     // PostsModule,  //lazyLoading --> se carga x lazy

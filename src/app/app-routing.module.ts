@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { CanActivateGuard } from './can-activate.guard';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/anotaciones-basicas.component';
 
 const routes: Routes = [    
   { path: 'ventana', component: RouterSecVentanaComponent, outlet:'popup' }, ////rutas secundarias  
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent }, ////canActivate
   { path: 'formulario', component: TemplateFormComponent }, ////tema 8 formulario
   { path: 'formularioReactivo', component: ReactiveFormComponent }, ////tema 8 formulario
+  { path: 'datosBasicos', component: AnotacionesBasicasComponent }, 
   { path: '**', pathMatch: 'full', redirectTo: 'home' } //** captura culquier url q no esta definida en las rutas
 ];
 
