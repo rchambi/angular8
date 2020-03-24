@@ -4,7 +4,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-component-hermano1',
   templateUrl: './component-hermano1.component.html',
-  styleUrls: ['./component-hermano1.component.css']
 })
 export class ComponentHermano1Component implements OnInit {
 
