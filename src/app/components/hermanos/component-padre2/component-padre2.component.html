@@ -1,0 +1,10 @@
+<!--  comunicacionEntreHermanos(padre) -->
+
+<h3>comunicación entre hermanos</h3>
+<!-- recibo el valor del evento enviarAlPadre que fue enviado desde hijo1 -->
+<!-- enviarAlPadre es el nombre del emitter -->
+<app-component-hermano1 (enviarAlPadre)="textoHijo1= $event"></app-component-hermano1>
+
+<!-- envio el valor del  textoHijo1 al textoHijo2, textoHijo2 es el nombre del @output -->
+<app-component-hermano2 [textoHijo2]="textoHijo1"></app-component-hermano2>
+

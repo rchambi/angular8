@@ -28,6 +28,18 @@ import { PasswordValidationDirective } from './validations/password-validation.d
 import { UsernameUnicoDirective } from './validations/username-unico.directive';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/anotaciones-basicas.component';
+import { ComponentPadreComponent } from './components/padre-hijo/component-padre/component-padre.component';
+import { ComponentHijoComponent } from './components/padre-hijo/component-hijo/component-hijo.component';
+import { PadreComponent } from './components/componentes-lejanos/padre/padre.component';
+import { Hijo1Component } from './components/componentes-lejanos/hijo1/hijo1.component';
+import { Hijo2Component } from './components/componentes-lejanos/hijo2/hijo2.component';
+import { Nieto1Component } from './components/componentes-lejanos/nieto1/nieto1.component';
+import { Nieto2Component } from './components/componentes-lejanos/nieto2/nieto2.component';
+import { ComponentHermano2Component } from './components/hermanos/component-hermano2/component-hermano2.component';
+import { ComponentHermano1Component } from './components/hermanos/component-hermano1/component-hermano1.component';
+import { ComponentPadre2Component } from './components/hermanos/component-padre2/component-padre2.component';
+import { ChildComponent } from './components/padre-hijo/child/child.component';
+import { ChildrenComponent } from './components/padre-hijo/children/children.component';
 
 
 @NgModule({
@@ -46,6 +58,19 @@ import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/an
     UsernameUnicoDirective,
     ReactiveFormComponent,
     AnotacionesBasicasComponent,
+    //components 
+    ComponentPadreComponent,
+    ComponentHijoComponent,
+    ComponentPadre2Component,
+    ComponentHermano1Component,
+    ComponentHermano2Component,
+    PadreComponent,
+    Hijo1Component,
+    Hijo2Component,
+    Nieto1Component,
+    Nieto2Component,
+    ChildComponent,
+    ChildrenComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +79,8 @@ import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/an
     HttpClientModule,  //// para usar con servicios tiene q ir esta linea
     UsuariosModule,//--rutasMultiples
     // PostsModule,  //lazyLoading --> se carga x lazy
+
+
     AppRoutingModule///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
   ],
   providers: [

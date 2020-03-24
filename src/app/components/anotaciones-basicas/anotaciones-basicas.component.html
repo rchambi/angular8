@@ -1,12 +1,19 @@
 <div class="row">
-    <div class="col-md-6">
-        <!-- usoDe# -->
+    <div class="col-md-3">
+        <!-- usoDe#VariableDeReferencia -->
         <h1>variable de referencia</h1>
         <p #varP>este es mi parrafo</p>
         info a copiado : <input value="{{varP.innerHTML}}"><br>
-
+        
         <button (click)="usoReferencia(varP)" type="button"> Mostrar</button>
         desde ts : {{respuestaReferencia}}
+    </div>
+    <div class="col-md-3">
+        <!-- otro ejemplo boton - hace click en el input subir oculto -->
+        <h1>variable de referencia ex.2</h1>
+        <p>otro ejemplo - cargar archivo</p>
+        <input type="file" style="display: none;" #uploader>
+        <button type="button" (click)="uploader.click()">Cargar Archivos</button>
 
     </div>
     <div class="col-md-6">
@@ -15,14 +22,9 @@
         nombre1 : {{persona.nombre}} <br>
         nombre2 que no existe se usa "?": ex persona?.nombre2 {{persona?.nombre2}} <br>
     </div>
+
 </div>
 
-<div class="row">
-    <div class="col-md-6">
-    </div>
-    <div class="col-md-6">
-    </div>
-</div>
 <div class="row">
     <div class="col-md-6">
         <!-- --------------------------------------------------------------------------->

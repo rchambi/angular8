@@ -1,0 +1,57 @@
+<!---------------------------------------------- ComponentePadreHIjo ------------------------------------------------->
+<div class="row">
+    <div class="container-fluid col-md-6">
+        <h3> Eejemplo 1 - Padre -> Hijo</h3>
+        <p>componente Padre</p>
+
+        <!-- ComponentePadreHIjo -->
+        <input type="text" #valorEnviar>
+        <button type="button" class="btn-primary" (click)="enviarValorAlComponenteHijo(valorEnviar.value)">Enviar a
+            hijo</button>
+        <!-- <input  (input)= "textoPadre= $event.target.value" > -->
+        <br>
+        <div class="container-fluid">
+            <app-component-hijo [textoHijo]="textoPadre" [textoHijo2]="textoPadre"
+                (enviarAlPadre)="recibirMensaje($event)"></app-component-hijo>
+
+            <!---------------------------------------------- ComponenteHijoPadre ------------------------------------------------->
+            <!-- (enviarAlPadre)="recibirMensaje($envent)" -->
+            <!-- se utiliza para enviar mensajes desde el hijo al padre -->
+            <span>aqui se muestra el valor enviado desde el componente padre
+                :<strong>{{mensajeDesdeHijo}}</strong></span> <br>
+        </div>
+    </div>
+    <!---------------------------------------------- UsoViewChild ------------------------------------------------->
+    <div class="container-fluid col-md-6">
+        <h3>Uso ViewChild</h3>
+        <p>componente Padre</p>
+
+        <!-- ComponentePadreHIjo -->
+        <input type="text" #valueForChild>
+        <button type="button" class="btn-primary" (click)="enviarMensaje(valueForChild.value)">ejecutar Metodo en Child</button>        
+        <br>
+        <div class="container-fluid">
+            <app-child></app-child>
+        </div>
+    </div>
+</div>
+<!---------------------------------------------- UsoViewChildren ------------------------------------------------->
+<hr>
+<div class="row">
+    <div class="container-fluid col-md-6">
+        <h4>uso de @ViewChildren</h4>
+        <button type="button" class="btn-primary btn" (click)="agregar()">Agregar</button>
+        <button type="button" class="btn-success btn" (click)="remover()">Remover</button>
+        <button type="button" class="btn-warning btn" (click)="voltearColores()">Voltear</button>
+        <br><br>
+        <select #selectComponente class="form-control col-md-6"  style="display: inline;">
+            <option *ngFor="let option of arr; let index= index" [value]="index">componente {{index +1}}</option>
+        </select>
+        <button type="button" class="btn-warning btn col-md-4" (click)="voltearColor(selectComponente.value)" style="float:right;">Cambiar Color</button>
+        <br>
+        <br>
+        <app-children *ngFor="let i of arr"></app-children>
+        <br>
+    </div>
+    <div class="container-fluid col-md-6"></div>
+</div>

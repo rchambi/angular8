@@ -36,7 +36,7 @@ export class AnotacionesBasicasComponent implements OnInit {
   mostrarTexto(event){
     this.textoEscrito=event.target.value;
   }
-  // usoDe#
+  // usoDe#VariableDeReferencia
   usoReferencia(variable){
     this.respuestaReferencia=variable.innerHTML;
   }

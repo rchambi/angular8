@@ -8,6 +8,9 @@ import { CanActivateGuard } from './can-activate.guard';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/anotaciones-basicas.component';
+import { ComponentPadreComponent } from './components/padre-hijo/component-padre/component-padre.component';
+import { PadreComponent } from './components/componentes-lejanos/padre/padre.component';
+import { ComponentPadre2Component } from './components/hermanos/component-padre2/component-padre2.component';
 
 const routes: Routes = [    
   { path: 'ventana', component: RouterSecVentanaComponent, outlet:'popup' }, ////rutas secundarias  
@@ -18,6 +21,9 @@ const routes: Routes = [
   { path: 'formulario', component: TemplateFormComponent }, ////tema 8 formulario
   { path: 'formularioReactivo', component: ReactiveFormComponent }, ////tema 8 formulario
   { path: 'datosBasicos', component: AnotacionesBasicasComponent }, 
+  { path: 'componentes', component: ComponentPadreComponent }, 
+  { path: 'componentesHermanos', component: ComponentPadre2Component }, 
+  { path: 'componentesLejanos', component: PadreComponent }, 
   { path: '**', pathMatch: 'full', redirectTo: 'home' } //** captura culquier url q no esta definida en las rutas
 ];
 
