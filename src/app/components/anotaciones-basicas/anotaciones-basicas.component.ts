@@ -1,9 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-anotaciones-basicas',
   templateUrl: './anotaciones-basicas.component.html',
   styleUrls: ['./anotaciones-basicas.component.css']
+  ///UsoEncapsulacion
+  // los estilos globales si afectan al componente 
+  // ,encapsulation: ViewEncapsulation.Emulated// default 
+
+// los estilos globales no afectan al componente - 
+// si el padre esta ShadowDom el hijo tambien
+  // encapsulation: ViewEncapsulation.ShadowDom 
 })
 export class AnotacionesBasicasComponent implements OnInit {
  persona = {nombre:'alan'};
@@ -25,12 +33,15 @@ export class AnotacionesBasicasComponent implements OnInit {
   { nombre: "Fernando Medina", edad: 23 },
   { nombre: "Milton Encarnación", edad: 53 }
 ];
-  constructor() { }
+  constructor(
+    private datePipe: DatePipe //-------usoDeDatePipe------
+    ) { }
 
 
   ngOnInit() {
     //bindingXpropiedad - seleccionar el seleccionado la 1 vez
     this.imagenURL= (<HTMLInputElement>document.getElementById('selectId')).value;
+    this.convertirFecha();
   }
   // bindingEventos
   mostrarTexto(event){
@@ -44,9 +55,23 @@ export class AnotacionesBasicasComponent implements OnInit {
   ConvertirMayusculas(){
     this.texto = this.texto.toUpperCase();    
   }
+
+  // -----------------------------usoDeDatePipe-----------
+  // colocar como provider en module.ts DatePipe
+  fecha:Date| string ;
+  convertirFecha(){
+    let date= new Date(1988, 3, 15);   
+    this.fecha = this.datePipe.transform(date,"dd/MM/yyyy");    
+  }
+  // ------------------------------------------------------
+
   // uso-ngModel
   ConvertirMinusculas(){
     this.texto = this.texto.toLowerCase();
+  }
+  mostrarMensaje(log:string){
+    console.log(log);
+
   }
 }
 

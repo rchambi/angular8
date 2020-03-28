@@ -1,0 +1,6 @@
+<!---------------------------------------------- ComponenteHijoPadre ------------------------------------------------->
+ <!-- <input type="text" (input)="texto = $event.target.value"> -->
+    <h3>Hijo -> Padre</h3>
+    <input type="text" #texto>
+    <button type="button" class="btn-primary" (click)="enviarValorAlcomponentePadre(texto.value)">Enviar a Padre</button>
+    <br>

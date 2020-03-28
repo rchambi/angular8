@@ -40,6 +40,8 @@ import { ComponentHermano1Component } from './components/hermanos/component-herm
 import { ComponentPadre2Component } from './components/hermanos/component-padre2/component-padre2.component';
 import { ChildComponent } from './components/padre-hijo/child/child.component';
 import { ChildrenComponent } from './components/padre-hijo/children/children.component';
+import { Hijo2PadreComponent } from './components/padre-hijo/hijo2-hijoPadre/hijo2-hijoPadre.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -71,6 +73,7 @@ import { ChildrenComponent } from './components/padre-hijo/children/children.com
     Nieto2Component,
     ChildComponent,
     ChildrenComponent,
+    Hijo2PadreComponent
   ],
   imports: [
     BrowserModule,
@@ -90,6 +93,7 @@ import { ChildrenComponent } from './components/padre-hijo/children/children.com
       multi: true
     }
     // SpotifyService
+    ,DatePipe //////////usoDeDatePipe
   ],
   bootstrap: [AppComponent]
 })

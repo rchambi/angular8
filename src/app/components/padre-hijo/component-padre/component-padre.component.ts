@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 import { ChildrenComponent } from '../children/children.component';
+import { AnotacionesBasicasComponent } from '../../anotaciones-basicas/anotaciones-basicas.component';
 
 
 @Component({
@@ -24,8 +25,6 @@ export class ComponentPadreComponent implements AfterViewInit {
   // ---------------------------------------------- ComponenteHijoPadre ------------------------------------------------
   mensajeDesdeHijo: string;
   recibirMensaje(mensaje: string) {
-    console.log(mensaje);
-
     this.mensajeDesdeHijo = mensaje;
   }
 
@@ -36,7 +35,7 @@ export class ComponentPadreComponent implements AfterViewInit {
   // @ViewChild(ChildComponent) componenteHijo:ChildComponent;
 
   //angual8 necestia un segundo parametro
-  @ViewChild(ChildComponent, {static: false}) componenteHijo: ChildComponent
+  @ViewChild(AnotacionesBasicasComponent, {static: false}) componenteHijo: AnotacionesBasicasComponent
   texto: string;
   mensajeError: string;
 

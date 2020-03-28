@@ -29,12 +29,5 @@ export class ComponentHijoComponent implements OnInit {
    }
  
   ngOnInit() {
-  }
-  ///////////////////////<!-- ComponenteHijoPadre -->
-
-  @Output()
-  enviarAlPadre:EventEmitter<string>= new EventEmitter<string>();
-  enviarValorAlcomponentePadre(value:string){
-    this.enviarAlPadre.emit(value);
-  }
+  } 
 }

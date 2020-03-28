@@ -11,17 +11,24 @@
         <!-- <input  (input)= "textoPadre= $event.target.value" > -->
         <br>
         <div class="container-fluid">
-            <app-component-hijo [textoHijo]="textoPadre" [textoHijo2]="textoPadre"
-                (enviarAlPadre)="recibirMensaje($event)"></app-component-hijo>
+            <app-component-hijo [textoHijo]="textoPadre" [textoHijo2]="textoPadre"></app-component-hijo>          
+        </div>
+    </div>
 
-            <!---------------------------------------------- ComponenteHijoPadre ------------------------------------------------->
+
+    <div class="container-fluid col-md-6">
+  <!---------------------------------------------- ComponenteHijoPadre ------------------------------------------------->
+            <app-hijo2-hijoPadre (enviarAlPadre)="recibirMensaje($event)"></app-hijo2-hijoPadre>
             <!-- (enviarAlPadre)="recibirMensaje($envent)" -->
             <!-- se utiliza para enviar mensajes desde el hijo al padre -->
             <span>aqui se muestra el valor enviado desde el componente padre
                 :<strong>{{mensajeDesdeHijo}}</strong></span> <br>
-        </div>
     </div>
-    <!---------------------------------------------- UsoViewChild ------------------------------------------------->
+</div>
+
+<!---------------------------------------------- UsoViewChild ------------------------------------------------->
+<hr>
+<div class="row">
     <div class="container-fluid col-md-6">
         <h3>Uso ViewChild</h3>
         <p>componente Padre</p>
@@ -34,10 +41,8 @@
             <app-child></app-child>
         </div>
     </div>
-</div>
 <!---------------------------------------------- UsoViewChildren ------------------------------------------------->
-<hr>
-<div class="row">
+
     <div class="container-fluid col-md-6">
         <h4>uso de @ViewChildren</h4>
         <button type="button" class="btn-primary btn" (click)="agregar()">Agregar</button>
@@ -53,5 +58,4 @@
         <app-children *ngFor="let i of arr"></app-children>
         <br>
     </div>
-    <div class="container-fluid col-md-6"></div>
 </div>
