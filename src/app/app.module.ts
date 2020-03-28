@@ -42,8 +42,8 @@ import { ChildComponent } from './components/padre-hijo/child/child.component';
 import { ChildrenComponent } from './components/padre-hijo/children/children.component';
 import { Hijo2PadreComponent } from './components/padre-hijo/hijo2-hijoPadre/hijo2-hijoPadre.component';
 import { DatePipe } from '@angular/common';
-
-
+import { AngularMatPadreComponent } from './components/angular-mat-padre/angular-mat-padre.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; ///con la instalcion de AngMaterial
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,7 +73,8 @@ import { DatePipe } from '@angular/common';
     Nieto2Component,
     ChildComponent,
     ChildrenComponent,
-    Hijo2PadreComponent
+    Hijo2PadreComponent,
+    AngularMatPadreComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +85,8 @@ import { DatePipe } from '@angular/common';
     // PostsModule,  //lazyLoading --> se carga x lazy
 
 
-    AppRoutingModule///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
+    BrowserAnimationsModule,
+    AppRoutingModule ///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
   ],
   providers: [
     {

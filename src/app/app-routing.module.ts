@@ -11,6 +11,7 @@ import { AnotacionesBasicasComponent } from './components/anotaciones-basicas/an
 import { ComponentPadreComponent } from './components/padre-hijo/component-padre/component-padre.component';
 import { PadreComponent } from './components/componentes-lejanos/padre/padre.component';
 import { ComponentPadre2Component } from './components/hermanos/component-padre2/component-padre2.component';
+import { AngularMatPadreComponent } from './components/angular-mat-padre/angular-mat-padre.component';
 
 const routes: Routes = [    
   { path: 'ventana', component: RouterSecVentanaComponent, outlet:'popup' }, ////rutas secundarias  
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'componentes', component: ComponentPadreComponent }, 
   { path: 'componentesHermanos', component: ComponentPadre2Component }, 
   { path: 'componentesLejanos', component: PadreComponent }, 
+  { path: 'angularMaterial', component: AngularMatPadreComponent }, 
   { path: '**', pathMatch: 'full', redirectTo: 'home' } //** captura culquier url q no esta definida en las rutas
 ];
 

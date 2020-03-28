@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <!-- usoDe#VariableDeReferencia -->
         <h1>variable de referencia</h1>
         <p #varP>este es mi parrafo</p>
@@ -8,7 +8,7 @@
         <button (click)="usoReferencia(varP)" type="button"> Mostrar</button>
         desde ts : {{respuestaReferencia}}
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         <!-- otro ejemplo boton - hace click en el input subir oculto -->
         <h1>variable de referencia ex.2</h1>
         <p>otro ejemplo - cargar archivo</p>
@@ -16,15 +16,14 @@
         <button type="button" (click)="uploader.click()">Cargar Archivos</button>
 
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
         <!-- --------------------------------------------------------------------------->
         <h1>navegacion segura</h1>
         nombre1 : {{persona.nombre}} <br>
         nombre2 que no existe se usa "?": ex persona?.nombre2 {{persona?.nombre2}} <br>
     </div>
-
 </div>
-
+<hr>
 <div class="row">
     <div class="col-md-3">
         <!-- --------------------------------------------------------------------------->
@@ -49,9 +48,10 @@
             <option value="../../../assets/img/angular.JPG">angular</option>
         </select><br><br>
         <!-- bindingXpropiedad - vemos q tiene []-->
-        <img [src]="imagenURL">
+        <img [src]="imagenURL" style="width: 200px;">
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-md-6">
         <!-- --------------------------------------------------------------------------->
@@ -79,6 +79,7 @@
 
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-md-6">
         <!-- ----------------------------------directivas de attributo - ngStyle----------------------------------------->
@@ -114,6 +115,7 @@
 
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-md-6">
         <!-- ----------------------------------directivas de estructura - ngIf----------------------------------------->
@@ -150,6 +152,7 @@
 
     </div>
 </div>
+<hr>
 <div class="row">
     <div class="col-md-6">
         <!-- uso-ngSwitch -->
