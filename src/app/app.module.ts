@@ -43,7 +43,15 @@ import { ChildrenComponent } from './components/padre-hijo/children/children.com
 import { Hijo2PadreComponent } from './components/padre-hijo/hijo2-hijoPadre/hijo2-hijoPadre.component';
 import { DatePipe } from '@angular/common';
 import { AngularMatPadreComponent } from './components/angular-mat-padre/angular-mat-padre.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; ///con la instalcion de AngMaterial
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort'; ///con la instalcion de AngMaterial
+import { TablaComponent } from './components/angular-mat-padre/tabla/tabla.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,7 +82,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
     ChildComponent,
     ChildrenComponent,
     Hijo2PadreComponent,
-    AngularMatPadreComponent
+    AngularMatPadreComponent,
+    TablaComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -86,7 +96,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 
     BrowserAnimationsModule,
-    AppRoutingModule ///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
+    ////////angular Material Component
+    MatTableModule, //para la tabla
+    MatPaginatorModule, //para la tabla
+    MatSortModule, //para la tabla
+    // -----------------------
+    MatInputModule ,///////para los input
+    //////////////////////////////
+    
+    AppRoutingModule///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
   ],
   providers: [
     {
