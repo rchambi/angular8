@@ -52,11 +52,17 @@ import { MatInputModule } from '@angular/material/input';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatListModule} from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort'; ///con la instalcion de AngMaterial
 
 import { TablaComponent } from './components/angular-mat-padre/tabla/tabla.component';
 import { ArbolComponent } from './components/angular-mat-padre/arbol/arbol.component';
+import { TabsComponent } from './components/angular-mat-padre/tabs/tabs.component';
+import { StepperComponent } from './components/angular-mat-padre/stepper/stepper.component';
+import { ListarComponent } from './components/angular-mat-padre/listar/listar.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +96,10 @@ import { ArbolComponent } from './components/angular-mat-padre/arbol/arbol.compo
     Hijo2PadreComponent,
     AngularMatPadreComponent,
     TablaComponent,
-    ArbolComponent
+    ArbolComponent,
+    TabsComponent,
+    StepperComponent,
+    ListarComponent
     
   ],
   imports: [
@@ -116,6 +125,16 @@ import { ArbolComponent } from './components/angular-mat-padre/arbol/arbol.compo
     MatIconModule,
     MatTreeModule, ///////para los tree
     ///////////////////-------------
+
+    MatTabsModule ,///////para los Tab
+    
+    ///////////////////-------------
+    MatStepperModule ,///////para los Stepper
+
+    ///////////////////-------------
+    MatListModule ,///////para los List
+
+
     AppRoutingModule///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
   ],
   providers: [
