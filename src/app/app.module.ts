@@ -47,10 +47,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatInputModule } from '@angular/material/input';
-import { MatSortModule } from '@angular/material/sort'; ///con la instalcion de AngMaterial
-import { TablaComponent } from './components/angular-mat-padre/tabla/tabla.component';
 
+import { MatInputModule } from '@angular/material/input';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatSortModule } from '@angular/material/sort'; ///con la instalcion de AngMaterial
+
+import { TablaComponent } from './components/angular-mat-padre/tabla/tabla.component';
+import { ArbolComponent } from './components/angular-mat-padre/arbol/arbol.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +89,8 @@ import { TablaComponent } from './components/angular-mat-padre/tabla/tabla.compo
     ChildrenComponent,
     Hijo2PadreComponent,
     AngularMatPadreComponent,
-    TablaComponent
+    TablaComponent,
+    ArbolComponent
     
   ],
   imports: [
@@ -103,7 +110,12 @@ import { TablaComponent } from './components/angular-mat-padre/tabla/tabla.compo
     // -----------------------
     MatInputModule ,///////para los input
     //////////////////////////////
-    
+    // ----------------------
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatIconModule,
+    MatTreeModule, ///////para los tree
+    ///////////////////-------------
     AppRoutingModule///-rutas --siempre tiene q ser ultimo x el wildcard --rutasMultiples
   ],
   providers: [
